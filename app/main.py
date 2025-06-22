@@ -204,7 +204,7 @@ async def ocr(file: UploadFile = File(...)):
 
     # POST backend
     try:
-        post_url = f"{BACKEND_BASE_URL}/public/entregas/{entrega_id}/respuestas"
+        post_url = f"https://{BACKEND_BASE_URL}/public/entregas/{entrega_id}/respuestas"
         be_resp  = requests.post(post_url, json=backend_payload, timeout=10)
         be_resp.raise_for_status()
         backend_res = be_resp.json()

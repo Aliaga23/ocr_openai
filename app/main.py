@@ -180,7 +180,7 @@ async def ocr(file: UploadFile = File(...)):
 
     try:
         comp = openai_client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": "Asistente OCR de encuestas en papel."},
                 {"role": "user",   "content": [

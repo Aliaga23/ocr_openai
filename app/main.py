@@ -81,7 +81,7 @@ def extract_qr(img_bytes: bytes) -> str:
     raise HTTPException(400, "No se detectó un QR legible")
 
 def get_plantilla_map(entrega_id: str) -> Dict[str, Any]:
-    url  = f"{BACKEND_BASE_URL}/public/entregas/{entrega_id}/plantilla-mapa"
+    url  = f"https://{BACKEND_BASE_URL}/public/entregas/{entrega_id}/plantilla-mapa"
     resp = requests.get(url, timeout=10)
     if resp.status_code != 200:
         raise HTTPException(resp.status_code, "Backend no devolvió plantilla")
